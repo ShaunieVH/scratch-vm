@@ -44,6 +44,11 @@ class ExtensionWorker {
         }
         return promise;
     }
+
+    refreshBlocks () {
+        const promise = dispatch.call('extensions', 'refreshBlocks');
+        return promise;
+    }
 }
 
 global.Scratch = global.Scratch || {};
@@ -56,5 +61,6 @@ global.Scratch.TargetType = TargetType;
  */
 const extensionWorker = new ExtensionWorker();
 global.Scratch.extensions = {
-    register: extensionWorker.register.bind(extensionWorker)
+    register: extensionWorker.register.bind(extensionWorker),
+    refreshBlocks: extensionWorker.refreshBlocks.bind(extensionWorker)
 };
