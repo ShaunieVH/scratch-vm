@@ -206,8 +206,10 @@ class ExtensionManager {
      */
     registerExtensionService (serviceName, extensionURL) {
         dispatch.call(serviceName, 'getInfo').then(info => {
-            info.extensionURL = extensionURL;
-            this._registerExtensionInfo(serviceName, info);
+            if(!this._loadedExtensions.has(info.id)) {
+                info.extensionURL = extensionURL;
+                this._registerExtensionInfo(serviceName, info);
+            }
         });
     }
 
