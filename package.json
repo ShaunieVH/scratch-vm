@@ -12,7 +12,7 @@
   "main": "./dist/node/scratch-vm.js",
   "browser": "./src/index.js",
   "scripts": {
-    "build": "npm run docs && webpack --progress --colors --bail",
+    "build": "webpack --progress --colors --bail",
     "coverage": "tap ./test/{unit,integration}/*.js --coverage --coverage-report=lcov",
     "deploy": "touch playground/.nojekyll && gh-pages -t -d playground -m \"Build for $(git log --pretty=format:%H -n1)\"",
     "docs": "jsdoc -c .jsdoc.json",
@@ -44,7 +44,7 @@
     "nets": "3.2.0",
     "scratch-parser": "5.0.0",
     "scratch-sb1-converter": "0.2.7",
-    "scratch-translate-extension-languages": "0.0.20190416132834",
+    "scratch-translate-extension-languages": "0.0.20191118205314",
     "socket.io-client": "2.0.4",
     "text-encoding": "0.7.0",
     "worker-loader": "^1.1.1"
